@@ -5,12 +5,12 @@ import { ProductConsumer } from "../context";
 export default function Sidebar() {
   return (
     <ProductConsumer>
-      {value => {
+      {(value) => {
         const { links, sidebarOpen, handleSidebar } = value;
         return (
           <SideWrapper show={sidebarOpen}>
             <ul>
-              {links.map(link => {
+              {links.map((link) => {
                 return (
                   <li key={link.id}>
                     <Link
@@ -33,15 +33,14 @@ export default function Sidebar() {
 
 const SideWrapper = styled.nav`
   position: fixed;
-  top: 60px;
+  top: 74px;
   left: 0;
   width: 100%;
   height: 100%;
   background: var(--mainGrey);
   z-index: 1;
-  border-right: 4px solid var(--primaryColor);
   transition: var(--mainTransition);
-  transform: ${props => (props.show ? "translateX(0)" : "translateX(-100%)")};
+  transform: ${(props) => (props.show ? "translateX(0)" : "translateX(-100%)")};
   ul {
     list-style-type: none;
     padding: 0 !important;

@@ -6,16 +6,17 @@ import logo from "../images/logo1.ico";
 export default function Navbar() {
   return (
     <ProductConsumer>
-      {value => {
+      {(value) => {
         const { cartItems, handleSidebar, handleCart } = value;
         return (
           <NavWrapper>
             <div className="nav-center">
-              <FaBars className="nav-icon" onClick={handleSidebar} />
-              <div className="nav-cart">              
-              <img  src={logo} alt="....ELIT-VITAE" onClick={handleCart}/>
-                <div className="cart-items">{cartItems}</div>
+              <div className="nav-cart">
+                {/* <img alt="WEBI" onClick={handleCart} /> */}
+                <h3 onClick={handleCart}>WEBI</h3>
+                {/* <div className="cart-items">{cartItems}</div> */}
               </div>
+              <FaBars className="nav-icon" onClick={handleSidebar} />
             </div>
           </NavWrapper>
         );
